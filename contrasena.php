@@ -2,7 +2,7 @@
 include("conexion.php");
 
 try {
-    $conn = new PDO("mysql:host=127.0.0.1:3306;dbname=$dbname", $dbuser, $dbpassword);
+    $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpassword);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     echo "Error de conexión: " . $e->getMessage();
